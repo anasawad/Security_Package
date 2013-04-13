@@ -13,7 +13,7 @@ Playfair_Cipher::Playfair_Cipher(string &key)
 
 void Playfair_Cipher::Set_KeyTable(string &key)
 {
-	string alpha =  "ABCDEFGHIKLMNOPQRSTUVWXYZ";
+	string alpha =  "abcdefghiklmnopqrstuvwxyz";
 	map<char,bool> keyTable;
 	UtilizeText(key);
 	int i=0,j;
