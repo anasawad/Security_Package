@@ -1,0 +1,38 @@
+﻿Build started 16-Apr-13 10:36:52 AM.
+     1>Project "C:\Users\Anas A. Ismail\documents\visual studio 2010\Projects\Security Package\Security Package\Security Package.vcxproj" on node 2 (build target(s)).
+     1>InitializeBuildStatus:
+         Creating "Debug\Security Package.unsuccessfulbuild" because "AlwaysCreate" was specified.
+       ClCompile:
+         C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /Od /Oy- /D WIN32 /D _DEBUG /D _CONSOLE /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc100.pdb" /Gd /TP /analyze- /errorReport:prompt Ceaser_Cipher.cpp Monoalphabetic_Cipher.cpp Playfair_Cipher.cpp main.cpp
+         Playfair_Cipher.cpp
+     1>c:\users\anas a. ismail\documents\visual studio 2010\projects\security package\security package\playfair_cipher.cpp(20): warning C4018: '<' : signed/unsigned mismatch
+     1>c:\users\anas a. ismail\documents\visual studio 2010\projects\security package\security package\playfair_cipher.cpp(30): warning C4018: '<' : signed/unsigned mismatch
+     1>c:\users\anas a. ismail\documents\visual studio 2010\projects\security package\security package\playfair_cipher.cpp(45): warning C4018: '<' : signed/unsigned mismatch
+     1>c:\users\anas a. ismail\documents\visual studio 2010\projects\security package\security package\playfair_cipher.cpp(69): warning C4018: '<' : signed/unsigned mismatch
+         Monoalphabetic_Cipher.cpp
+     1>c:\users\anas a. ismail\documents\visual studio 2010\projects\security package\security package\monoalphabetic_cipher.cpp(42): warning C4018: '<' : signed/unsigned mismatch
+     1>c:\users\anas a. ismail\documents\visual studio 2010\projects\security package\security package\monoalphabetic_cipher.cpp(54): warning C4018: '<' : signed/unsigned mismatch
+         Ceaser_Cipher.cpp
+     1>c:\users\anas a. ismail\documents\visual studio 2010\projects\security package\security package\ceaser_cipher.cpp(42): warning C4018: '<' : signed/unsigned mismatch
+     1>c:\users\anas a. ismail\documents\visual studio 2010\projects\security package\security package\ceaser_cipher.cpp(58): warning C4018: '<' : signed/unsigned mismatch
+         Generating Code...
+         Compiling...
+         main.cpp
+         Generating Code...
+       Link:
+         C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"C:\Users\Anas A. Ismail\documents\visual studio 2010\Projects\Security Package\Debug\Security Package.exe" /INCREMENTAL:NO /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /ManifestFile:"Debug\Security Package.exe.intermediate.manifest" /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /DEBUG /PDB:"C:\Users\Anas A. Ismail\documents\visual studio 2010\Projects\Security Package\Debug\Security Package.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:\Users\Anas A. Ismail\documents\visual studio 2010\Projects\Security Package\Debug\Security Package.lib" /MACHINE:X86 Debug\Ceaser_Cipher.obj
+         Debug\main.obj
+         Debug\Monoalphabetic_Cipher.obj
+         Debug\Playfair_Cipher.obj
+     1>Ceaser_Cipher.obj : warning LNK4075: ignoring '/EDITANDCONTINUE' due to '/INCREMENTAL:NO' specification
+         Security Package.vcxproj -> C:\Users\Anas A. Ismail\documents\visual studio 2010\Projects\Security Package\Debug\Security Package.exe
+       Manifest:
+         C:\Program Files (x86)\Microsoft SDKs\Windows\v7.0A\bin\mt.exe /nologo /verbose /outputresource:"C:\Users\Anas A. Ismail\documents\visual studio 2010\Projects\Security Package\Debug\Security Package.exe;#1" /manifest "Debug\Security Package.exe.intermediate.manifest"
+       FinalizeBuildStatus:
+         Deleting file "Debug\Security Package.unsuccessfulbuild".
+         Touching "Debug\Security Package.lastbuildstate".
+     1>Done Building Project "C:\Users\Anas A. Ismail\documents\visual studio 2010\Projects\Security Package\Security Package\Security Package.vcxproj" (build target(s)).
+
+Build succeeded.
+
+Time Elapsed 00:00:09.55
