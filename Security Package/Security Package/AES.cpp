@@ -11,6 +11,10 @@ AES::AES(unsigned char** p_state)
 
 AES::~AES(void)
 {
+	delete [] m_roundKeys;
+	for(int index_row=0;index_row < 4 ; ++ index_row)
+		delete [] m_state[index_row];
+	delete m_state;
 }
 void AES::addRoundkey(unsigned char** p_roundkey)
 {
@@ -190,6 +194,10 @@ const string AES::Cipher(string &text, string &key)
 	for(int j=0;j<4;++j)
 		for(int i=0;i<4;++i)
 			cipheredText += m_state[i][j];
+	
+	for(int index_row=0;index_row < 4 ; ++ index_row)
+		delete [] roundKey[index_row];
+	delete roundKey;
 	
 	return cipheredText;
 }
