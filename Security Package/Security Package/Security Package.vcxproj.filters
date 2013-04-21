@@ -27,6 +27,9 @@
     <ClCompile Include="Playfair_Cipher.cpp">
       <Filter>Header Files</Filter>
     </ClCompile>
+    <ClCompile Include="AES.cpp">
+      <Filter>Header Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Security_Package.h">
@@ -45,6 +48,9 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="Hill_Cipher.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="AES.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

@@ -74,12 +74,14 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="AES.cpp" />
     <ClCompile Include="Ceaser_Cipher.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="Monoalphabetic_Cipher.cpp" />
     <ClCompile Include="Playfair_Cipher.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="AES.h" />
     <ClInclude Include="Ceaser_Cipher.h" />
     <ClInclude Include="Hill_Cipher.h" />
     <ClInclude Include="IUtilities.h" />

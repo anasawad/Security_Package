@@ -16,7 +16,7 @@ AES::~AES(void)
 		delete [] m_state[index_row];
 	delete m_state;
 }
-void AES::addRoundkey(unsigned char** p_roundkey)
+void AES::AddRoundkey(unsigned char** p_roundkey)
 {
 	if(p_roundkey)
 		return ;
@@ -25,7 +25,7 @@ void AES::addRoundkey(unsigned char** p_roundkey)
 		for(int x=0;x<4;++x)
 			m_state[y][x] ^= p_roundkey[y][x]; // Adding key with data is equivalent to XOR
 }
-void AES::shiftRows()
+void AES::ShiftRows()
 {
 	int temp_row[3];
 	for(int y=1;y<4;++ y)
@@ -48,13 +48,13 @@ void AES::shiftRows()
 			m_state[y][col_index]=temp_row[index_temp_row ++];
 	}
 }
-void AES::subBytes()
+void AES::SubBytes()
 {
 	for(int y=0;y<4;++y)
 		for(int x=0;x<4;++x)
 			m_state[y][x]=S_BOX[m_state[y][x]];
 }
-void AES::mixColoumns()
+void AES::MixColoumns()
 {
 	unsigned char oldState_Row_of_currentCol[4];
 	for(int j=0;j<4;++j)
@@ -64,10 +64,10 @@ void AES::mixColoumns()
 		oldState_Row_of_currentCol[2] = m_state[2][j];
 		oldState_Row_of_currentCol[3] = m_state[3][j];
 
-		m_state[0][j] = polynomialMultiplyByX(oldState_Row_of_currentCol[0],2) ^ polynomialMultiplyByX(oldState_Row_of_currentCol[1],3) ^ oldState_Row_of_currentCol[2] ^ oldState_Row_of_currentCol[3];
-		m_state[1][j] = oldState_Row_of_currentCol[0] ^ polynomialMultiplyByX(oldState_Row_of_currentCol[1],2) ^ polynomialMultiplyByX(oldState_Row_of_currentCol[2],3) ^ oldState_Row_of_currentCol[3];
-		m_state[2][j] = oldState_Row_of_currentCol[0] ^ oldState_Row_of_currentCol[1] ^ polynomialMultiplyByX(oldState_Row_of_currentCol[2],2) ^ polynomialMultiplyByX(oldState_Row_of_currentCol[3],3);
-		m_state[3][j] = polynomialMultiplyByX(oldState_Row_of_currentCol[0],3) ^ oldState_Row_of_currentCol[1] ^ oldState_Row_of_currentCol[2] ^ polynomialMultiplyByX(oldState_Row_of_currentCol[3],2);
+		m_state[0][j] = PolynomialMultiplyByX(oldState_Row_of_currentCol[0],2) ^ PolynomialMultiplyByX(oldState_Row_of_currentCol[1],3) ^ oldState_Row_of_currentCol[2] ^ oldState_Row_of_currentCol[3];
+		m_state[1][j] = oldState_Row_of_currentCol[0] ^ PolynomialMultiplyByX(oldState_Row_of_currentCol[1],2) ^ PolynomialMultiplyByX(oldState_Row_of_currentCol[2],3) ^ oldState_Row_of_currentCol[3];
+		m_state[2][j] = oldState_Row_of_currentCol[0] ^ oldState_Row_of_currentCol[1] ^ PolynomialMultiplyByX(oldState_Row_of_currentCol[2],2) ^ PolynomialMultiplyByX(oldState_Row_of_currentCol[3],3);
+		m_state[3][j] = PolynomialMultiplyByX(oldState_Row_of_currentCol[0],3) ^ oldState_Row_of_currentCol[1] ^ oldState_Row_of_currentCol[2] ^ PolynomialMultiplyByX(oldState_Row_of_currentCol[3],2);
 	}
 }
 
@@ -77,7 +77,7 @@ void AES::mixColoumns()
 	             (b6b5b4b3b2b10) XOR (00011011) if b7 = 1
 			   }
 */
-unsigned char AES::polynomialMultiplyByX(unsigned char data,int X)
+unsigned char AES::PolynomialMultiplyByX(unsigned char data,int X)
 {
 	return (data & 0x80 ? (data<<X)^0x1B : data<<X); 
 }
@@ -106,12 +106,12 @@ const void  AES::UtilizeText(string& txt)
 			m_state[i][j]=txt[index ++ ];
 	}
 }
-int AES::rotWord(int word)
+int AES::RotWord(int word)
 {
 	int b0 = word & 0x000000FF;
 	return (word>>8) | (b0 << 24);
 }
-int AES::subWord(int word)
+int AES::SubWord(int word)
 {
 	int b0 = ( word & 0x000000FF );
 	int b1 = ( word & 0x0000FF00 ) >> 8;
@@ -124,7 +124,7 @@ int AES::subWord(int word)
 	b3 = S_BOX[b3];
 	return b0 | (b1 << 8) | (b2 << 16) | (b3 << 24);
 }
-void AES::startKeyExpansion(int* p_intialRoundKey)
+void AES::StartKeyExpansion(int* p_intialRoundKey)
 {
 	m_roundKeys = new int[45];
 	int Rcon [11];
@@ -139,7 +139,7 @@ void AES::startKeyExpansion(int* p_intialRoundKey)
 	{
 		if(i % 4 == 0)
 		{
-			m_roundKeys[i] = subWord(rotWord(m_roundKeys[i-1])) ^ Rcon[i/4];
+			m_roundKeys[i] = SubWord(RotWord(m_roundKeys[i-1])) ^ Rcon[i/4];
 		}
 		else
 		{
@@ -147,7 +147,7 @@ void AES::startKeyExpansion(int* p_intialRoundKey)
 		}
 	}
 }
-void AES::getRoundKey(int p_roundNUM,unsigned char** p_roundKey)
+void AES::GetRoundKey(int p_roundNUM,unsigned char** p_roundKey)
 {
 	int roundKey_index = p_roundNUM*4;
 	int word;
@@ -167,28 +167,28 @@ const string AES::Cipher(string &text, string &key)
 	UtilizeText(text);
 	unsigned char * str_key = (unsigned char *)key.c_str();
 	int * key_word = (int*)str_key;
-	startKeyExpansion(key_word);
+	StartKeyExpansion(key_word);
 
 	unsigned char ** roundKey = new unsigned char*[4];
 	for(int i=0;i<4;++i)
 		roundKey[i]=new unsigned char[4];
 
 	int roundNum=0;
-	getRoundKey(roundNum,roundKey);
-	addRoundkey(roundKey);
+	GetRoundKey(roundNum,roundKey);
+	AddRoundkey(roundKey);
 	
 	while(roundNum ++ < 10 )
 	{
-		subBytes();
-		shiftRows();
-		mixColoumns();
-		getRoundKey(roundNum,roundKey);
-		addRoundkey(roundKey);
+		SubBytes();
+		ShiftRows();
+		MixColoumns();
+		GetRoundKey(roundNum,roundKey);
+		AddRoundkey(roundKey);
 	}
-	subBytes();
-	shiftRows();
-	getRoundKey(roundNum,roundKey);
-	addRoundkey(roundKey);
+	SubBytes();
+	ShiftRows();
+	GetRoundKey(roundNum,roundKey);
+	AddRoundkey(roundKey);
 
 	string cipheredText;
 	for(int j=0;j<4;++j)
