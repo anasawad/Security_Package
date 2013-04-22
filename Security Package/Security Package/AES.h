@@ -38,6 +38,9 @@ private:
 	int RotWord(int);
 	int SubWord(int);
 	void GetRoundKey(int,unsigned char**);
+	virtual const void UtilizeText(string&);
+	virtual int** UtilizeText(string&,int&);
+
 public:
 	AES(void);
 	AES(unsigned char** p_state);
@@ -48,7 +51,7 @@ public:
 	virtual const string Cipher(string&, string&);
 	virtual const string Cipher(string&, int&, int **);
 
-	virtual const void UtilizeText(string&);
+	
 };
 
 #endif //AES_H_

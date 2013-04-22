@@ -26,6 +26,7 @@ private:
 	//methods 
 	void Init_Alpha();
 	virtual const void UtilizeText(string&);
+	virtual int** UtilizeText(string &,int&);
 };
 
 

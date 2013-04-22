@@ -146,3 +146,4 @@ const string Playfair_Cipher::Get_Corresponding(string &text)
 
 const string Playfair_Cipher::Cipher(string&, int&){return"";}
 const string Playfair_Cipher::Cipher(string&,int&, int**){return "";}
+int** Playfair_Cipher::UtilizeText(string&,int&){return NULL;}

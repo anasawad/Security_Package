@@ -30,6 +30,9 @@
     <ClCompile Include="AES.cpp">
       <Filter>Header Files</Filter>
     </ClCompile>
+    <ClCompile Include="Hill_Cipher.cpp">
+      <Filter>Header Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Security_Package.h">
@@ -56,5 +59,6 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="ClassDiagram1.cd" />
+    <None Include="input.in" />
   </ItemGroup>
 </Project>

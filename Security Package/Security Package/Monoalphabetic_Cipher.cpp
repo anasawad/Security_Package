@@ -47,9 +47,14 @@ const string Monoalphabetic_Cipher::Cipher(string &text, string &key)
 	return cipher_txt;
 }
 
-const void  Monoalphabetic_Cipher::UtilizeText(string& txt)
-{
 
+
+const string Monoalphabetic_Cipher::Cipher(string&,int&){return "";}
+const string Monoalphabetic_Cipher::Cipher(string&,int&,int**){return "";}
+
+
+const void Monoalphabetic_Cipher::UtilizeText(string& txt)
+{
 	string temp;
 	for (int i = 0; i < txt.length(); i++)
 	{
@@ -59,6 +64,4 @@ const void  Monoalphabetic_Cipher::UtilizeText(string& txt)
 	}
 	txt = temp;
 }
-
-const string Monoalphabetic_Cipher::Cipher(string&,int&){return "";}
-const string Monoalphabetic_Cipher::Cipher(string&,int&,int**){return "";}
+int** Monoalphabetic_Cipher::UtilizeText(string&,int&) {return NULL;}

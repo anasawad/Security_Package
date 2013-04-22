@@ -11,15 +11,16 @@ class Playfair_Cipher: public Security_Package, public IUtilities
 private:
 	char m_keyTable[5][5];
 	const string Get_Corresponding(string &);// 2 chars per turn;
-	const void UtilizeText(string &); //utilize the input text 
+	virtual const void UtilizeText(string &); //utilize the input text 
+	virtual int** UtilizeText(string&,int&);
 
 public:	
 	Playfair_Cipher();
 	Playfair_Cipher(string &);
 	void Print_KeyTable();
 	void Set_KeyTable(string &);
-	const string Cipher(string&, string&);
-	const string Cipher(string&, int&);
+	virtual const string Cipher(string&, string&);
+	virtual const string Cipher(string&, int&);
 	virtual const string Cipher(string&, int&, int **);
 
 };

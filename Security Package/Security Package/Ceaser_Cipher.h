@@ -23,7 +23,8 @@ private:
 
 	//methods
 	void Init_Alpha();
-	const void UtilizeText(string&);
+	virtual const void UtilizeText(string&);
+	virtual int** UtilizeText(string&,int&);
 };
 
 

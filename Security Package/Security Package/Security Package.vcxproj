@@ -76,6 +76,7 @@
   <ItemGroup>
     <ClCompile Include="AES.cpp" />
     <ClCompile Include="Ceaser_Cipher.cpp" />
+    <ClCompile Include="Hill_Cipher.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="Monoalphabetic_Cipher.cpp" />
     <ClCompile Include="Playfair_Cipher.cpp" />
@@ -91,6 +92,7 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="ClassDiagram1.cd" />
+    <None Include="input.in" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

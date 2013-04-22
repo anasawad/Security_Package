@@ -202,3 +202,4 @@ const string AES::Cipher(string &text, string &key)
 	return cipheredText;
 }
 const string AES::Cipher(string&,int&,int**){return "";}
+int** AES::UtilizeText(string&,int&){return NULL;}

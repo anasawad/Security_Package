@@ -6,21 +6,42 @@
 #include "Monoalphabetic_Cipher.h"
 #include "Playfair_Cipher.h"
 #include "AES.h"
+#include "Hill_Cipher.h"
 using namespace std;
 
 int main ()
 {
-	Security_Package* ceaser[2];
-	Playfair_Cipher playfair;
-	Monoalphabetic_Cipher t;
-	Ceaser_Chiper c1 ;
-	Ceaser_Chiper c2 ;
-	ceaser[0] = &c1;
-	ceaser[1] = &c2;
-	string s = "communication";
-	int key = 8;
-	string k = "playfair example";
-	//cout <<ceaser[0]->Cipher(s,key) << endl;
-	//cout << t.Cipher(s,k) << endl;
-	cout << playfair.Cipher(s,k) << endl;
+	freopen("input.in","r",stdin);
+	Hill_Cipher cipher;
+	int**key;
+	int m ;
+	string text;
+	getline(cin,text);
+	cin >> m;
+	key = new int*[m];
+	for (int i = 0; i < m; i++)
+	{
+		key[i] = new int[m];
+	}
+	for (int i =0 ;i < m; i++)
+	{
+		for (int j = 0; j < m; j++)
+		{
+			cin >> key[i][j];
+		}
+	}
+	cout << cipher.Cipher(text,m,key) << endl;
+	//Security_Package* ceaser[2];
+	//Playfair_Cipher playfair;
+	//Monoalphabetic_Cipher t;
+	//Ceaser_Chiper c1 ;
+	//Ceaser_Chiper c2 ;
+	//ceaser[0] = &c1;
+	//ceaser[1] = &c2;
+	//string s = "communication";
+	//int key = 8;
+	//string k = "playfair example";
+	////cout <<ceaser[0]->Cipher(s,key) << endl;
+	////cout << t.Cipher(s,k) << endl;
+	//cout << playfair.Cipher(s,k) << endl;
 }

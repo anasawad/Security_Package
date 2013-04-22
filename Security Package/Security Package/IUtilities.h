@@ -9,5 +9,6 @@ public:
 	IUtilities(){}
 protected:
 	virtual const void UtilizeText(string&)=0;
+	virtual int** UtilizeText(string&,int&)=0;
 };
 #endif //IUTILITIES_H_
