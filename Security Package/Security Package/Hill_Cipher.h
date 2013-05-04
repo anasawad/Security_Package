@@ -29,7 +29,6 @@ private:
 	void free_mem(int**, int&);
 	virtual const void UtilizeText(string&);
 	virtual int** UtilizeText(string&, int&);
-
 	const int* VectorMul(int*, int**, int&);
 };
 

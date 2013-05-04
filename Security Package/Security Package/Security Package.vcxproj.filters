@@ -33,6 +33,9 @@
     <ClCompile Include="Hill_Cipher.cpp">
       <Filter>Header Files</Filter>
     </ClCompile>
+    <ClCompile Include="AutoKey.cpp">
+      <Filter>Header Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Security_Package.h">
@@ -54,6 +57,9 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="AES.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="AutoKey.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
