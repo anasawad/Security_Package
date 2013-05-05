@@ -1,18 +1,16 @@
-#ifndef AUTOKEY_H_
-#define AUTOKEY_H_
+#ifndef REPEATINGKEY_H_
+#define REPEATINGKEY_H_
 
 #include "Polyalphabetic.h"
 #include "IUtilities.h"
-#include <vector>
-#include <string>
 
-class AutoKey: public Polyalphabetic, public IUtilities
+class RepeatingKey:public Polyalphabetic, public IUtilities
 {
-public:	
-	AutoKey();
-	~AutoKey();
+public:
+	RepeatingKey();
+	~RepeatingKey();
 
-	//Override virtual functions 
+	//Override virtual functions
 	virtual const string Cipher(string&, string&);
 	virtual const string Cipher(string&, int&);
 	virtual const string Cipher(string&, int&, int **);
@@ -25,6 +23,5 @@ private:
 	string UtilizeKey(string&,string&);
 	virtual const void UtilizeText(string&);
 	virtual int** UtilizeText(string&,int&);
-
 };
-#endif //AUTOKEY_H_
+#endif //REPEATINGKEY_H_

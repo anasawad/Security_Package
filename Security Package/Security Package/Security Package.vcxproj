@@ -81,6 +81,8 @@
     <ClCompile Include="main.cpp" />
     <ClCompile Include="Monoalphabetic_Cipher.cpp" />
     <ClCompile Include="Playfair_Cipher.cpp" />
+    <ClCompile Include="Polyalphabetic.cpp" />
+    <ClCompile Include="RepeatingKey.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="AES.h" />
@@ -90,6 +92,8 @@
     <ClInclude Include="IUtilities.h" />
     <ClInclude Include="Monoalphabetic_Cipher.h" />
     <ClInclude Include="Playfair_Cipher.h" />
+    <ClInclude Include="Polyalphabetic.h" />
+    <ClInclude Include="Repeatingkey.h" />
     <ClInclude Include="Security_Package.h" />
   </ItemGroup>
   <ItemGroup>

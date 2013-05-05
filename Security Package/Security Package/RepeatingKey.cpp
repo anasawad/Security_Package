@@ -1,20 +1,16 @@
-#include "AutoKey.h"
+#include "Repeatingkey.h"
 using namespace std;
 
-AutoKey::AutoKey()
-
-{
-	/*InitAlpha();
-	InitTable();*/
-}
-AutoKey::~AutoKey()
+RepeatingKey::RepeatingKey()
 {
 
 }
-
+RepeatingKey::~RepeatingKey()
+{
+}
 
 //Override Methods
-const string AutoKey::Cipher(string &text, string &key)
+const string RepeatingKey::Cipher(string &text, string &key)
 {
 	int idx1,idx2;
 	UtilizeText(text);
@@ -29,11 +25,11 @@ const string AutoKey::Cipher(string &text, string &key)
 	}
 	return ciphterText;
 }
-const string AutoKey::Cipher(string&, int&){return "";}
-const string AutoKey::Cipher(string&, int&, int **){return "";}
+const string RepeatingKey::Cipher(string&, int&){return "";}
+const string RepeatingKey::Cipher(string&, int&, int **){return "";}
 
 //Private methods
-const void AutoKey::UtilizeText(string& text)
+const void RepeatingKey::UtilizeText(string& text)
 {
 	int j=0;
 	string temp;
@@ -46,18 +42,19 @@ const void AutoKey::UtilizeText(string& text)
 	}
 	text = temp;
 }
-int **AutoKey::UtilizeText(string&,int&){return NULL;}
-string AutoKey::UtilizeKey(string &text, string &key)
+int **RepeatingKey::UtilizeText(string&,int&){return NULL;}
+
+string RepeatingKey::UtilizeKey(string &text, string &key)
 {
 	int len = text.length()-key.length();
 	string temp = key;
 	for(int i =0 ; i < len; i++)
 	{
-		temp += text[i];
+		temp += key[i];
 	}
 	return temp;
 }
-int AutoKey::MapChar(char c)
+int RepeatingKey::MapChar(char c)
 {
 	return c-97;
 }
