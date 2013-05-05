@@ -41,8 +41,6 @@ const void AutoKey::UtilizeText(string& text)
 	{
 		if (text[i] == ' ')continue;
 		temp+= tolower(text[i]);
-		if(temp[temp.size()-1] == 'j')
-			temp[temp.size()-1]  = 'i';
 	}
 	text = temp;
 }
