@@ -93,6 +93,7 @@
     <ClInclude Include="Monoalphabetic_Cipher.h" />
     <ClInclude Include="Playfair_Cipher.h" />
     <ClInclude Include="Polyalphabetic.h" />
+    <ClInclude Include="RailFence.h" />
     <ClInclude Include="Repeatingkey.h" />
     <ClInclude Include="Security_Package.h" />
   </ItemGroup>
