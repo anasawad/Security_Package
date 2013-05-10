@@ -42,6 +42,12 @@
     <ClCompile Include="RepeatingKey.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="RailFence.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Columner.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Security_Package.h">
@@ -75,6 +81,9 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="RailFence.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Columnar.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

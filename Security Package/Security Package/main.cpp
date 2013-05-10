@@ -9,17 +9,26 @@
 #include "AES.h"
 #include "Hill_Cipher.h"
 #include "AutoKey.h"
-
+#include "RailFence.h"
+#include "Columnar.h"
 using namespace std;
 
 int main ()
 {
 	freopen("input.in","r",stdin);
-	AutoKey autokey;// = new AutoKey();
+	Columner col;
 	string key;
 	string text;
-	cin >> text >> key;
-	cout << autokey.Cipher(text, key) << endl;
+	cin >> key;
+	cin >> text;
+	
+	cout << col.Cipher(text, key) << endl;
+
+	//AutoKey autokey;// = new AutoKey();
+	//string key;
+	//string text;
+	//cin >> text >> key;
+	//cout << autokey.Cipher(text, key) << endl;
 	//Hill_Cipher cipher;
 	//int**key;
 	//int m ;

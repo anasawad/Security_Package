@@ -3,11 +3,12 @@
 
 #include "Security_Package.h"
 #include "IUtilities.h"
-class Railfence:public Security_Package, public IUtilities
+#include <vector>
+class RailFence:public Security_Package, public IUtilities
 {
 public:
-	Railfence();
-	~Railfence();
+	RailFence();
+	~RailFence();
 
 	//Override virtual functions
 	virtual const string Cipher(string&, string&);
@@ -16,7 +17,10 @@ public:
 
 private:
 	//members
+	vector <vector <char> > m_textMat;
 
 	//methods
+	virtual const void UtilizeText(string&);
+	virtual int** UtilizeText(string&,int&);
 };
 #endif //RAILFENCE_H_

@@ -77,17 +77,20 @@
     <ClCompile Include="AES.cpp" />
     <ClCompile Include="AutoKey.cpp" />
     <ClCompile Include="Ceaser_Cipher.cpp" />
+    <ClCompile Include="Columner.cpp" />
     <ClCompile Include="Hill_Cipher.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="Monoalphabetic_Cipher.cpp" />
     <ClCompile Include="Playfair_Cipher.cpp" />
     <ClCompile Include="Polyalphabetic.cpp" />
+    <ClCompile Include="RailFence.cpp" />
     <ClCompile Include="RepeatingKey.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="AES.h" />
     <ClInclude Include="AutoKey.h" />
     <ClInclude Include="Ceaser_Cipher.h" />
+    <ClInclude Include="Columnar.h" />
     <ClInclude Include="Hill_Cipher.h" />
     <ClInclude Include="IUtilities.h" />
     <ClInclude Include="Monoalphabetic_Cipher.h" />
