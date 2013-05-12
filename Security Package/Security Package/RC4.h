@@ -18,7 +18,7 @@ public:
 	virtual const string Cipher(std::string&, int&);
 	virtual const string Cipher(std::string&, std::string&);
 	virtual const string Cipher(std::string&, int&, int **);
-	 const string  Decipher(string &in, string& key);
+	virtual const string Decipher(string &in, string& key)=0;
 	virtual const void UtilizeText(string&);
 	virtual int** UtilizeText(string&,int&);
 

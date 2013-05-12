@@ -203,3 +203,5 @@ const string AES::Cipher(string &text, string &key)
 }
 const string AES::Cipher(string&,int&,int**){return "";}
 int** AES::UtilizeText(string&,int&){return NULL;}
+
+const string AES::Decipher(string&, string&){return "";}

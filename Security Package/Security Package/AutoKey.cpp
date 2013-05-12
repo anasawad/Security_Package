@@ -31,6 +31,7 @@ const string AutoKey::Cipher(string &text, string &key)
 }
 const string AutoKey::Cipher(string&, int&){return "";}
 const string AutoKey::Cipher(string&, int&, int **){return "";}
+const string AutoKey::Decipher(string&, string&){return "";}
 
 //Private methods
 const void AutoKey::UtilizeText(string& text)

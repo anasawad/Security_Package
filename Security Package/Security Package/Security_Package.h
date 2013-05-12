@@ -21,7 +21,7 @@ public:
 	virtual const string Cipher(std::string&, int&)=0;
 	virtual const string Cipher(std::string&, std::string&)=0;
 	virtual const string Cipher(std::string&, int&, int **)=0;
-	//virtual const string  DeCipher();
+	virtual const string Decipher(string &in, string& key)=0;
 	
 protected:
 	//virtual ~Security_Package(){};

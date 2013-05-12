@@ -54,7 +54,7 @@ const string Columner::Cipher(string &text, string &key)
 	return cipherText;
 }
 const string Columner::Cipher(string &, int&, int **){return "";}
-
+const string Columner::Decipher(string&, string&){return "";}
 //private Functions
 const void Columner::UtilizeText(string &text)
 {

@@ -15,7 +15,7 @@ public:
 	virtual const string Cipher(string&,int&);
 	virtual const string Cipher(string&,string&);
 	virtual const string Cipher(string&,int&, int**);
-
+	virtual const string Decipher(string&, string&);
 private:
 	//members
 	hash_map <char, int> m_alpha;

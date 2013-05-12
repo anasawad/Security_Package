@@ -56,7 +56,7 @@ const string RC4::Cipher(std::string& input, std::string& key)
 }
 
 
-const string  RC4::Decipher(string &in, string& key)
+const string RC4::Decipher(string &in, string& key)
 {
 	return "";
 }

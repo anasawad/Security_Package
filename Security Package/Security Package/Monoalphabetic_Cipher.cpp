@@ -47,10 +47,9 @@ const string Monoalphabetic_Cipher::Cipher(string &text, string &key)
 	return cipher_txt;
 }
 
-
-
 const string Monoalphabetic_Cipher::Cipher(string&,int&){return "";}
 const string Monoalphabetic_Cipher::Cipher(string&,int&,int**){return "";}
+const string Monoalphabetic_Cipher::Decipher(string&, string&){return "";}
 
 
 const void Monoalphabetic_Cipher::UtilizeText(string& txt)

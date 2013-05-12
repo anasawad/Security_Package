@@ -27,7 +27,7 @@ const string RepeatingKey::Cipher(string &text, string &key)
 }
 const string RepeatingKey::Cipher(string&, int&){return "";}
 const string RepeatingKey::Cipher(string&, int&, int **){return "";}
-
+const string RepeatingKey::Decipher(string&, string&){return "";}
 //Private methods
 const void RepeatingKey::UtilizeText(string& text)
 {

@@ -56,6 +56,7 @@ const string Hill_Cipher::Cipher(string&, string&)
 {
 	return "";
 }
+const string Hill_Cipher::Decipher(string&, string&){return "";}
 
 /*Private Methods*/
 

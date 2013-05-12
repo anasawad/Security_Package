@@ -13,6 +13,7 @@ private:
 	const string Get_Corresponding(string &);// 2 chars per turn;
 	virtual const void UtilizeText(string &); //utilize the input text 
 	virtual int** UtilizeText(string&,int&);
+	virtual const string Decipher(string&, string&);
 
 public:	
 	Playfair_Cipher();

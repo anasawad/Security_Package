@@ -52,7 +52,7 @@ const string RailFence::Cipher(string &text, int &key)
 }
 const string RailFence::Cipher(string &text, string &key){return "";}
 const string RailFence::Cipher(string &, int&, int **){return "";}
-
+const string RailFence::Decipher(string&, string&){return "";}
 //private Functions
 const void RailFence::UtilizeText(string &text)
 {

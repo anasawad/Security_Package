@@ -67,3 +67,4 @@ const void Ceaser_Chiper::UtilizeText(string &text)
 const string Ceaser_Chiper::Cipher(string&,string&){return "";}
 const string Ceaser_Chiper::Cipher(string&,int&,int**){return "";}
 int** Ceaser_Chiper::UtilizeText(string&,int&){return NULL;}
+const string Ceaser_Chiper::Decipher(string&, string&){return "";}
