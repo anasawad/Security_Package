@@ -48,6 +48,9 @@
     <ClCompile Include="Columner.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="RC4.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Security_Package.h">
@@ -84,6 +87,9 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="Columnar.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="RC4.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

@@ -84,6 +84,7 @@
     <ClCompile Include="Playfair_Cipher.cpp" />
     <ClCompile Include="Polyalphabetic.cpp" />
     <ClCompile Include="RailFence.cpp" />
+    <ClCompile Include="RC4.cpp" />
     <ClCompile Include="RepeatingKey.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -97,6 +98,7 @@
     <ClInclude Include="Playfair_Cipher.h" />
     <ClInclude Include="Polyalphabetic.h" />
     <ClInclude Include="RailFence.h" />
+    <ClInclude Include="RC4.h" />
     <ClInclude Include="Repeatingkey.h" />
     <ClInclude Include="Security_Package.h" />
   </ItemGroup>

@@ -2,13 +2,13 @@
 
 RC4::RC4(void)
 {
-	initialize();
+	Initialize();
 }
 
-void RC4::initialize()
+void RC4::Initialize()
 {
 	for(int i=0; i<256; i++)
-		State[i] = i;
+		m_state[i] = i;
 }
 
 /*
@@ -19,9 +19,9 @@ void RC4::KSA(string& key)
 	int j = 0, keylen = key.size();
 	for(int i=0; i<256; i++) 
 	{
-		j = (j + State[i] + key[i%keylen]) % 256;
+		j = (j + m_state[i] + key[i%keylen]) % 256;
 	
-		swap(State[i], State[j]);
+		swap(m_state[i], m_state[j]);
 	}
 }
 
@@ -37,11 +37,11 @@ const string RC4::Cipher(std::string& input, std::string& key)
 	for(int k=0; k<input.size(); k++) 
 	{
 		i = (i+1) % 256;
-		j = (j+State[i]) % 256;
+		j = (j+m_state[i]) % 256;
  
-		swap(State[i], State[j]);
+		swap(m_state[i], m_state[j]);
  
-		keyStream[k] = State[(State[i]+State[j]) % 256];
+		keyStream[k] = m_state[(m_state[i]+m_state[j]) % 256];
 	}
 
 	int tmp;
@@ -56,11 +56,10 @@ const string RC4::Cipher(std::string& input, std::string& key)
 }
 
 
-const string  RC4::DeCipher(string &in, string& key)
+const string  RC4::Decipher(string &in, string& key)
 {
 	return "";
 }
-
 
 
 const string RC4::Cipher(string& ,int& ){return "";}
