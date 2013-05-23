@@ -11,18 +11,28 @@
 #include "AutoKey.h"
 #include "RailFence.h"
 #include "Columnar.h"
+#include "DES.h"
 using namespace std;
 
 int main ()
 {
 	freopen("input.in","r",stdin);
-	Columner col;
+	freopen("output.out","w",stdout);
+	DES des;
+	string s1,s2;
+
+	getline(cin, s1);
+
+	s2 = des.Cipher(s1,s2);
+	cout << s2 << endl;
+	cout << des.Decipher(s2,s1) << endl;
+	/*Columner col;
 	string key;
 	string text;
 	cin >> key;
 	cin >> text;
 	
-	cout << col.Cipher(text, key) << endl;
+	cout << col.Cipher(text, key) << endl;*/
 
 	//AutoKey autokey;// = new AutoKey();
 	//string key;

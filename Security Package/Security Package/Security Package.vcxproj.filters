@@ -51,6 +51,9 @@
     <ClCompile Include="RC4.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="DES.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Security_Package.h">
@@ -92,9 +95,13 @@
     <ClInclude Include="RC4.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="DES.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <None Include="input.in" />
-    <None Include="ClassDiagram1.cd" />
+    <None Include="ClassDiagram2.cd" />
+    <None Include="output.out" />
   </ItemGroup>
 </Project>
