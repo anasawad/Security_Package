@@ -59,7 +59,7 @@ private:
 	void Keygen();
 	string Encrypt(string&);
 	string Decrypt(string&);
-	int* CharToBinary(char c);
+	int* CharToBinary(unsigned char);
 
 
 	//Override Virtual Functions

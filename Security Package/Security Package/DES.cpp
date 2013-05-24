@@ -145,7 +145,7 @@ void DES::Reverse()
 	}
 }
 
-int* DES::CharToBinary(char c)
+int* DES::CharToBinary(unsigned char c)
 {
 	int *charInBinary = new int[8];
 	int ascii = (int) c;
@@ -520,6 +520,7 @@ const string DES::Cipher(string& text, string& notused)
 		for(; i<64; i++) 
 			m_swapText[i]=m_textLeft[i-32]; 
 		Reverse();
+		//get the text again from binary 
 		int k = 128;
 		int count =0;
 		for(int i=0; i<8; i++)
@@ -541,13 +542,13 @@ const string DES::Decipher(string& text, string& notused)
 {
 	string tempText;
 	tempText = text;
-	//int len = tempText.length();
+	int len = tempText.length();
 	int finalTxtIdx=0;
-	//UtilizeText(tempText);
 	Keygen();
 	int toBinaryIdx = 0, txtInBinaryIdx;
 
 	int ascii;
+
 	int *charInBinary = new int [8];
 
 	for(int m=0,toBinaryIdx = 0; m<(tempText.length()/8); m++) 
@@ -556,21 +557,18 @@ const string DES::Decipher(string& text, string& notused)
 		for(int i=0; i<8; i++,toBinaryIdx++)
 		{
 			//converting text to binary 
-			charInBinary = CharToBinary(tempText[toBinaryIdx]);	
+			unsigned char myChar = tempText[toBinaryIdx];
+			charInBinary = CharToBinary(myChar);	
 			//filling m_textBinaryFormat with the whole text in binary 
-			for(int k=0; k<8; k++,txtInBinaryIdx++)
-				m_textBinaryFormat[txtInBinaryIdx]= charInBinary[k]; 
+			for(int k=0; k<8; k++,txtInBinaryIdx++)m_textBinaryFormat[txtInBinaryIdx]= charInBinary[k]; 
 		}
 		Initial_Permutation();
-
 		//dividing the text into two equal parts (left, right)
 		int i=0;
-		for(i=0; i<64; i++)
-			m_textBinaryFormat[i]=m_initialPerm[i];
-		for(i=0; i<32; i++) 
-			m_textLeft[i]=m_textBinaryFormat[i];
-		for(; i<64; i++)
-			m_textRight[i-32]=m_textBinaryFormat[i];
+		for(i=0; i<64; i++)m_textBinaryFormat[i]=m_initialPerm[i];
+		for(i=0; i<32; i++) m_textLeft[i]=m_textBinaryFormat[i];
+		for(; i<64; i++)m_textRight[i-32]=m_textBinaryFormat[i];
+
 		for(int round=1; round<=16; round++)
 		{
 			Expansion(); //expanding the m_textRight[32] to fill m_expansionTable[48]
@@ -580,17 +578,15 @@ const string DES::Decipher(string& text, string& notused)
 			Xor_LeftRight(); //XORing the m_textLeft[32] with m_permTable[32]
 
 			//for swapping adding the right part to the left part
-			for(i=0; i<32; i++)
-				m_textLeft[i]= m_textRight[i];
-			for(i=0; i<32; i++) 
-				m_textRight[i]=m_xorLeftRight[i];
+			for(i=0; i<32; i++)m_textLeft[i]= m_textRight[i];
+			for(i=0; i<32; i++)m_textRight[i]=m_xorLeftRight[i];
 		}
-		//Swapping text
-		for(i=0; i<32; i++)
-			m_swapText[i]= m_textRight[i];
-		for(; i<64; i++) 
-			m_swapText[i]=m_textLeft[i-32]; 
+		for(i=0; i<32; i++) m_swapText[i]=m_textRight[i]; 
+		for(; i<64; i++) m_swapText[i]=m_textLeft[i-32]; 
+
 		Reverse();
+
+		//get the text again from binary 
 		int k = 128;
 		int count =0;
 		for(int i=0; i<8; i++)
@@ -604,11 +600,11 @@ const string DES::Decipher(string& text, string& notused)
 			k=128;
 			count=0;
 		}
-	}
+	} //for loop ends here
 	m_finalText[finalTxtIdx]='\0';
 	char *final1=new char[1000];
-	int i=0,j;
-	for(i=0,j=text.length(); i<text.length(); i++,j++)
+	int i,j;
+	for(i=0,j=tempText.length(); i<tempText.length(); i++,j++)
 		final1[i]=m_finalText[j];
 	final1[i]='\0';
 	return(m_finalText);
