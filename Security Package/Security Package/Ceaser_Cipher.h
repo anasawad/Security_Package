@@ -6,10 +6,10 @@
 #include "IUtilities.h"
 using namespace std;
 
-class Ceaser_Chiper:public Security_Package, public IUtilities
+class Ceaser_Cipher:public Security_Package, public IUtilities
 {
 public:
-	Ceaser_Chiper();
+	Ceaser_Cipher();
 
 	/*override the virtual functions*/
 	virtual const string Cipher(string&, int&);

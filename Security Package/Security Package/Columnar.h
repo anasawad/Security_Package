@@ -1,14 +1,14 @@
-#ifndef COLUMNER_H_
-#define COLUMNER_H_
+#ifndef COLUMNAR_H_
+#define COLUMNAR_H_
 
 #include "Security_Package.h"
 #include "IUtilities.h"
 
-class Columner: public Security_Package, public IUtilities
+class Columnar: public Security_Package, public IUtilities
 {
 public:
-	Columner();
-	~Columner();
+	Columnar();
+	~Columnar();
 	//Override virtual functions
 	virtual const string Cipher(string&, string&);
 	virtual const string Cipher(string&, int&);

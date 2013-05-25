@@ -1,11 +1,11 @@
 #include"Security_Package.h"
 #include "Ceaser_Cipher.h"
 
-Ceaser_Chiper::Ceaser_Chiper()
+Ceaser_Cipher::Ceaser_Cipher()
 {
 	Init_Alpha();
 }
-void Ceaser_Chiper::Init_Alpha()
+void Ceaser_Cipher::Init_Alpha()
 {
 	m_alpha['a']=0;
 	m_alpha['b']=1;
@@ -35,7 +35,7 @@ void Ceaser_Chiper::Init_Alpha()
 	m_alpha['z']=25;
 }
 
-const string Ceaser_Chiper::Cipher(string &text, int &key)
+const string Ceaser_Cipher::Cipher(string &text, int &key)
 {
 	int cipherIdx;
 	string cipher_txt;
@@ -52,7 +52,7 @@ const string Ceaser_Chiper::Cipher(string &text, int &key)
 	return cipher_txt;
 }
 
-const void Ceaser_Chiper::UtilizeText(string &text)
+const void Ceaser_Cipher::UtilizeText(string &text)
 {
 	string temp;
 	for (int i = 0; i < text.length(); i++)
@@ -64,7 +64,7 @@ const void Ceaser_Chiper::UtilizeText(string &text)
 	text = temp;
 }
 
-const string Ceaser_Chiper::Cipher(string&,string&){return "";}
-const string Ceaser_Chiper::Cipher(string&,int&,int**){return "";}
-int** Ceaser_Chiper::UtilizeText(string&,int&){return NULL;}
-const string Ceaser_Chiper::Decipher(string&, string&){return "";}
+const string Ceaser_Cipher::Cipher(string&,string&){return "";}
+const string Ceaser_Cipher::Cipher(string&,int&,int**){return "";}
+int** Ceaser_Cipher::UtilizeText(string&,int&){return NULL;}
+const string Ceaser_Cipher::Decipher(string&, string&){return "";}
