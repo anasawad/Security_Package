@@ -206,15 +206,15 @@ int** AES::UtilizeText(string&,int&){return NULL;}
 
 const string AES::Decipher(string &text, string &key)
 {
-	UtilizeText(text);
 	unsigned char * str_key = (unsigned char *)key.c_str();
 	int * key_word = (int*)str_key;
 	StartKeyExpansion(key_word);
 
 	return Decipher_Based_on_Previous_Ciphering();
 }
-const string AES::Decipher_Based_on_Previous_Ciphering()
+const string AES::Decipher_Based_on_Previous_Ciphering(string &text)
 {
+	UtilizeText(text);
 	unsigned char ** roundKey = new unsigned char*[4];
 	for(int i=0;i<4;++i)
 		roundKey[i]=new unsigned char[4];

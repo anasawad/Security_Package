@@ -22,7 +22,7 @@ public:
 	virtual const string Cipher(string&, std::string&)=0;
 	virtual const string Cipher(string&, int&, int **)=0;
 	virtual const string Decipher(string &in, string& key)=0;
-	virtual const string Decipher_Based_on_Previous_Ciphering() { return "";}
+	virtual const string Decipher_Based_on_Previous_Ciphering(string &in) { return "";}
 protected:
 	//virtual ~Security_Package(){};
 };
