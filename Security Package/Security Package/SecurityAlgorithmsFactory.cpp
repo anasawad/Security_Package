@@ -11,6 +11,8 @@
 #include "RailFence.h"
 #include "RC4.h"
 #include "Repeatingkey.h"
+
+SecurityAlgorithmsFactory* SecurityAlgorithmsFactory::instance = NULL;
 SecurityAlgorithmsFactory::SecurityAlgorithmsFactory(void)
 {
 }
