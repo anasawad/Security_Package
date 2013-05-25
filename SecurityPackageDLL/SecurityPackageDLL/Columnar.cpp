@@ -2,11 +2,9 @@
 
 Columnar::Columnar()
 {
-
 }
 Columnar::~Columnar()
 {
-
 }
 
 

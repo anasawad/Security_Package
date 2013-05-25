@@ -4,11 +4,12 @@
 class SecurityAlgorithmsFactory
 {
 private:
-	static SecurityAlgorithmsFactory instance;
+	static SecurityAlgorithmsFactory *instance;
 	SecurityAlgorithmsFactory(void);
 	~SecurityAlgorithmsFactory(void);
 public:
-	Security_Package* createAlgorithm(string p_AlgoName);
-	static SecurityAlgorithmsFactory getInstance()
+	Security_Package* CreateAlgorithm(string p_AlgoName);
+	static SecurityAlgorithmsFactory* getInstance();
+	
 };
 

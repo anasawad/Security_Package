@@ -11,18 +11,19 @@
     </ProjectConfiguration>
   </ItemGroup>
   <PropertyGroup Label="Globals">
-    <ProjectGuid>{87548FD6-C8BD-4E5D-B33C-725A7FCB16E5}</ProjectGuid>
+    <ProjectGuid>{C5622F07-8BE5-47BA-83B5-98B7BE61491E}</ProjectGuid>
     <Keyword>Win32Proj</Keyword>
-    <RootNamespace>SecurityPackage</RootNamespace>
+    <RootNamespace>SecurityPackageDLL</RootNamespace>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
-    <ConfigurationType>Application</ConfigurationType>
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
     <UseDebugLibraries>true</UseDebugLibraries>
     <CharacterSet>Unicode</CharacterSet>
+    <CLRSupport>true</CLRSupport>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
-    <ConfigurationType>Application</ConfigurationType>
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
     <UseDebugLibraries>false</UseDebugLibraries>
     <WholeProgramOptimization>true</WholeProgramOptimization>
     <CharacterSet>Unicode</CharacterSet>
@@ -38,7 +39,7 @@
   </ImportGroup>
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
-    <LinkIncremental>false</LinkIncremental>
+    <LinkIncremental>true</LinkIncremental>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <LinkIncremental>false</LinkIncremental>
@@ -49,10 +50,12 @@
       </PrecompiledHeader>
       <WarningLevel>Level3</WarningLevel>
       <Optimization>Disabled</Optimization>
-      <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_WINDOWS;_USRDLL;SECURITYPACKAGEDLL_EXPORTS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <UseUnicodeForAssemblerListing>false</UseUnicodeForAssemblerListing>
+      <StringPooling>true</StringPooling>
     </ClCompile>
     <Link>
-      <SubSystem>Console</SubSystem>
+      <SubSystem>Windows</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
     </Link>
   </ItemDefinitionGroup>
@@ -64,30 +67,15 @@
       <Optimization>MaxSpeed</Optimization>
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
-      <PreprocessorDefinitions>WIN32;NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_WINDOWS;_USRDLL;SECURITYPACKAGEDLL_EXPORTS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
     </ClCompile>
     <Link>
-      <SubSystem>Console</SubSystem>
+      <SubSystem>Windows</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
     </Link>
   </ItemDefinitionGroup>
-  <ItemGroup>
-    <ClCompile Include="AES.cpp" />
-    <ClCompile Include="AutoKey.cpp" />
-    <ClCompile Include="Ceaser_Cipher.cpp" />
-    <ClCompile Include="Columner.cpp" />
-    <ClCompile Include="DES.cpp" />
-    <ClCompile Include="Hill_Cipher.cpp" />
-    <ClCompile Include="main.cpp" />
-    <ClCompile Include="Monoalphabetic_Cipher.cpp" />
-    <ClCompile Include="Playfair_Cipher.cpp" />
-    <ClCompile Include="Polyalphabetic.cpp" />
-    <ClCompile Include="RailFence.cpp" />
-    <ClCompile Include="RC4.cpp" />
-    <ClCompile Include="RepeatingKey.cpp" />
-  </ItemGroup>
   <ItemGroup>
     <ClInclude Include="AES.h" />
     <ClInclude Include="AutoKey.h" />
@@ -102,12 +90,34 @@
     <ClInclude Include="RailFence.h" />
     <ClInclude Include="RC4.h" />
     <ClInclude Include="Repeatingkey.h" />
+    <ClInclude Include="SecurityAlgorithmsFactory.h" />
+    <ClInclude Include="SecurityPackageWrapper.h" />
     <ClInclude Include="Security_Package.h" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="ClassDiagram2.cd" />
-    <None Include="input.in" />
-    <None Include="output.out" />
+    <ClCompile Include="AES.cpp" />
+    <ClCompile Include="AutoKey.cpp" />
+    <ClCompile Include="Ceaser_Cipher.cpp" />
+    <ClCompile Include="Columnar.cpp" />
+    <ClCompile Include="DES.cpp" />
+    <ClCompile Include="Hill_Cipher.cpp" />
+    <ClCompile Include="Monoalphabetic_Cipher.cpp" />
+    <ClCompile Include="Playfair_Cipher.cpp" />
+    <ClCompile Include="Polyalphabetic.cpp" />
+    <ClCompile Include="RailFence.cpp" />
+    <ClCompile Include="RC4.cpp" />
+    <ClCompile Include="RepeatingKey.cpp" />
+    <ClCompile Include="SecurityAlgorithmsFactory.cpp" />
+    <ClCompile Include="SecurityPackageWrapper.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.VisualStudio.VSContentInstaller" />
+    <Reference Include="System" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="ClassDiagram1.cd" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

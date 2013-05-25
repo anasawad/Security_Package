@@ -1,5 +1,5 @@
-#ifndef COLUMNAR_H_
-#define COLUMNAR_H_
+#ifndef Columnar_H_
+#define Columnar_H_
 
 #include "Security_Package.h"
 #include "IUtilities.h"
@@ -23,4 +23,4 @@ private:
 	virtual const void UtilizeText(string&);
 	virtual int** UtilizeText(string&,int&);
 };
-#endif //COLUMNER_H_
+#endif //Columnar_H_

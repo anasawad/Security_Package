@@ -64,7 +64,7 @@ const string RC4::Decipher(string &in, string& key)
 
 const string RC4::Cipher(string& ,int& ){return "";}
 const string RC4::Cipher(std::string&, int&, int **) {return "";}
-const void RC4::UtilizeText(string&){return;}
+const void RC4::UtilizeText(string&){;}
 int** RC4::UtilizeText(string&,int&){return NULL;}
 
 
