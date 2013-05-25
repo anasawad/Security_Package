@@ -45,13 +45,16 @@
     <ClCompile Include="RailFence.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Columner.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="RC4.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="DES.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="SecurityAlgorithmsFactory.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Columnar.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
@@ -96,6 +99,9 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="DES.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="SecurityAlgorithmsFactory.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

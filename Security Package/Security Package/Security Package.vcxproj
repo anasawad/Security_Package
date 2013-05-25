@@ -77,7 +77,7 @@
     <ClCompile Include="AES.cpp" />
     <ClCompile Include="AutoKey.cpp" />
     <ClCompile Include="Ceaser_Cipher.cpp" />
-    <ClCompile Include="Columner.cpp" />
+    <ClCompile Include="Columnar.cpp" />
     <ClCompile Include="DES.cpp" />
     <ClCompile Include="Hill_Cipher.cpp" />
     <ClCompile Include="main.cpp" />
@@ -87,6 +87,7 @@
     <ClCompile Include="RailFence.cpp" />
     <ClCompile Include="RC4.cpp" />
     <ClCompile Include="RepeatingKey.cpp" />
+    <ClCompile Include="SecurityAlgorithmsFactory.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="AES.h" />
@@ -102,6 +103,7 @@
     <ClInclude Include="RailFence.h" />
     <ClInclude Include="RC4.h" />
     <ClInclude Include="Repeatingkey.h" />
+    <ClInclude Include="SecurityAlgorithmsFactory.h" />
     <ClInclude Include="Security_Package.h" />
   </ItemGroup>
   <ItemGroup>
