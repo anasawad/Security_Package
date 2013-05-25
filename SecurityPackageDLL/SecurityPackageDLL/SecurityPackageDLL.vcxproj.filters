@@ -48,9 +48,6 @@
     <ClInclude Include="RailFence.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="RC4.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="Repeatingkey.h">
       <Filter>Header Files</Filter>
     </ClInclude>
@@ -61,6 +58,9 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="SecurityAlgorithmsFactory.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="RC4.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
@@ -92,9 +92,6 @@
     <ClCompile Include="RailFence.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="RC4.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="RepeatingKey.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
@@ -105,6 +102,9 @@
       <Filter>Header Files</Filter>
     </ClCompile>
     <ClCompile Include="Columnar.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="RC4.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

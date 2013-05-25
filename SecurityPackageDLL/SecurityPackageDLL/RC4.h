@@ -19,6 +19,7 @@ public:
 	virtual const string Cipher(std::string&, std::string&);
 	virtual const string Cipher(std::string&, int&, int **);
 	virtual const string Decipher(string &in, string& key);
+	string PRGA(int inputSize);/*pseudo-random number generation*/
 	virtual const void UtilizeText(string&);
 	virtual int** UtilizeText(string&,int&);
 

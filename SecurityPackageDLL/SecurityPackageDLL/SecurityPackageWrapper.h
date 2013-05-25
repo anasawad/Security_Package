@@ -21,14 +21,15 @@ private:
 	Security_Package *m_algorithm;
 
 	string ToString(String^);
-	String^ToStringHandel(string);
+	String^ToStringHandle(string);
 	int** ToArray(array<int,2>^,int);
 public:
 	SecurityPackageWrapper();
 	String^ Cipher(String^, String^, int);
 	String^ Cipher(String^, String^, String^);
 	String^ Cipher(String^, String^, int, array<int,2>^);
-	String^ Decipher(String^, int);
+	String^ Decipher(String^,String^, String^);
+	String^ Decipher(String^,String^);
 
 };
 #endif //SECURITY_PACKAGE_WRAPPER_H_

@@ -210,7 +210,7 @@ const string AES::Decipher(string &text, string &key)
 	int * key_word = (int*)str_key;
 	StartKeyExpansion(key_word);
 
-	return Decipher_Based_on_Previous_Ciphering();
+	return Decipher_Based_on_Previous_Ciphering(text);
 }
 const string AES::Decipher_Based_on_Previous_Ciphering(string &text)
 {

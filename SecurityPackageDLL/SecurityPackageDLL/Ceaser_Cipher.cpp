@@ -47,7 +47,6 @@ const string Ceaser_Cipher::Cipher(string &text, int &key)
 			if((*it).second == ((key+cipherIdx)%26))
 			{cipher_txt += (*it).first;break;}
 		}
-		//cipher_txt += this->m_alpha[cipherIdx+key].second;
 	}
 	return cipher_txt;
 }
