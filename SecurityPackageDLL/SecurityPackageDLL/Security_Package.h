@@ -18,11 +18,11 @@ public:
 	Security_Package(){}
 	
 public:
-	virtual const string Cipher(std::string&, int&)=0;
-	virtual const string Cipher(std::string&, std::string&)=0;
-	virtual const string Cipher(std::string&, int&, int **)=0;
+	virtual const string Cipher(string&, int&)=0;
+	virtual const string Cipher(string&, std::string&)=0;
+	virtual const string Cipher(string&, int&, int **)=0;
 	virtual const string Decipher(string &in, string& key)=0;
-	
+	virtual const string Decipher_Based_on_Previous_Ciphering() { return "";}
 protected:
 	//virtual ~Security_Package(){};
 };

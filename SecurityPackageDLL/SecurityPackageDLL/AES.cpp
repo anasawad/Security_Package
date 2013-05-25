@@ -204,4 +204,46 @@ const string AES::Cipher(string &text, string &key)
 const string AES::Cipher(string&,int&,int**){return "";}
 int** AES::UtilizeText(string&,int&){return NULL;}
 
-const string AES::Decipher(string&, string&){return "";}
+const string AES::Decipher(string &text, string &key)
+{
+	UtilizeText(text);
+	unsigned char * str_key = (unsigned char *)key.c_str();
+	int * key_word = (int*)str_key;
+	StartKeyExpansion(key_word);
+
+	return Decipher_Based_on_Previous_Ciphering();
+}
+const string AES::Decipher_Based_on_Previous_Ciphering()
+{
+	unsigned char ** roundKey = new unsigned char*[4];
+	for(int i=0;i<4;++i)
+		roundKey[i]=new unsigned char[4];
+
+	int roundNum=0;
+	GetRoundKey(10 - roundNum,roundKey);//In Decryption we use the same key expansion of encryption but in an inverse way
+	AddRoundkey(roundKey);
+	
+	while(roundNum ++ < 10 )
+	{
+		SubBytes();
+		ShiftRows();
+		MixColoumns();
+		GetRoundKey(10 - roundNum,roundKey);//In Decryption we use the same key expansion of encryption but in an inverse way
+		AddRoundkey(roundKey);
+	}
+	SubBytes();
+	ShiftRows();
+	GetRoundKey(10 - roundNum,roundKey);//In Decryption we use the same key expansion of encryption but in an inverse way
+	AddRoundkey(roundKey);
+
+	string plainText;
+	for(int j=0;j<4;++j)
+		for(int i=0;i<4;++i)
+			plainText += m_state[i][j];
+	
+	for(int index_row=0;index_row < 4 ; ++ index_row)
+		delete [] roundKey[index_row];
+	delete roundKey;
+	
+	return plainText;
+}
