@@ -4,6 +4,7 @@
 #include "Polyalphabetic.h"
 #include "IUtilities.h"
 
+
 class RepeatingKey:public Polyalphabetic, public IUtilities
 {
 public:

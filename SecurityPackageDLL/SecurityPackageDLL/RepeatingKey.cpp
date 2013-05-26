@@ -3,7 +3,8 @@ using namespace std;
 
 RepeatingKey::RepeatingKey()
 {
-
+	Polyalphabetic::InitTable();
+	Polyalphabetic::InitAlpha();
 }
 RepeatingKey::~RepeatingKey()
 {

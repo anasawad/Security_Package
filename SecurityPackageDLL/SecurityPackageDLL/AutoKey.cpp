@@ -4,6 +4,8 @@ using namespace std;
 AutoKey::AutoKey()
 
 {
+	Polyalphabetic::InitTable();
+	Polyalphabetic::InitAlpha();
 	/*InitAlpha();
 	InitTable();*/
 }
