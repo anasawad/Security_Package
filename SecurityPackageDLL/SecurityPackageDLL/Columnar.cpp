@@ -52,7 +52,37 @@ const string Columnar::Cipher(string &text, string &key)
 	return cipherText;
 }
 const string Columnar::Cipher(string &, int&, int **){return "";}
-const string Columnar::Decipher(string&, string&){return "";}
+const string Columnar::Decipher(string &text, string &key)
+{
+	UtilizeText(text);
+	string cipherText;
+	int len = text.length() / key.length();
+	int value = atoi(key.c_str());
+	m_textMat.resize(len);
+	for(int i = 0 ; i < len ; i++)
+	{
+		m_textMat[i].resize(key.length());
+	}
+	int count =0;
+	char num = '1';
+	int ind ;
+	for (int j =0; j < key.length(); j++)
+	{
+		ind = key.find(num);
+		for (int i =0; i < len; i++)
+		{
+			m_textMat[i][ind]= text[count];
+			count ++;
+		}
+		num++;
+	}
+	for (int i =0; i < len; i++)
+		for (int j =0; j < key.length(); j++)
+			cipherText+=m_textMat[i][j];
+	return cipherText;
+}
+const string Columnar::Decipher(string&, int&){return "";}
+const string Columnar::Decipher(string&, int&, int **){return "";}
 //private Functions
 const void Columnar::UtilizeText(string &text)
 {

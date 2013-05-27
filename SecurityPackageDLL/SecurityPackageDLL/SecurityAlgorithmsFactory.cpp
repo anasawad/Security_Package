@@ -1,6 +1,7 @@
 #include "SecurityAlgorithmsFactory.h"
 #include "AES.h"
 #include "DES.h"
+#include "TDES.h"
 #include "AutoKey.h"
 #include "Ceaser_Cipher.h"
 #include "Columnar.h"
@@ -12,6 +13,7 @@
 #include "RailFence.h"
 #include "RC4.h"
 #include "Repeatingkey.h"
+#include "MD5.h"
 
 SecurityAlgorithmsFactory* SecurityAlgorithmsFactory::instance;
 
@@ -46,8 +48,11 @@ Security_Package* SecurityAlgorithmsFactory::CreateAlgorithm(string p_AlgoName)
 		return new Ceaser_Cipher();
 	else if(p_AlgoName == "RC4")
 		return new RC4();
-
-
+	else if(p_AlgoName == "MD5")
+		return new MD5();
+	else
+		if(p_AlgoName == "TDES")
+			return new TDES();
 }
 
 SecurityAlgorithmsFactory* SecurityAlgorithmsFactory::getInstance()

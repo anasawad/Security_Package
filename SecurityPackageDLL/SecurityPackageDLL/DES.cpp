@@ -611,3 +611,5 @@ const string DES::Decipher(string& text, string& notused)
 }
 const string DES::Cipher(string&, int&, int **){return"";}
 const string DES::Cipher(string&, int&){return "";}
+const string DES::Decipher(string&, int&, int **){return "";}
+const string DES::Decipher(string&, int&){return "";}

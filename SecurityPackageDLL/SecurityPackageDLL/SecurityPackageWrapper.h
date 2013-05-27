@@ -29,7 +29,9 @@ public:
 	String^ Cipher(String^, String^, String^);
 	String^ Cipher(String^, String^, int, array<int,2>^);
 	String^ Decipher(String^,String^, String^);
+	String^ Decipher(String^,String^,int);
 	String^ Decipher(String^,String^);
+	String^ Decipher(String^,String^,int,array<int,2>^);
 
 };
 #endif //SECURITY_PACKAGE_WRAPPER_H_

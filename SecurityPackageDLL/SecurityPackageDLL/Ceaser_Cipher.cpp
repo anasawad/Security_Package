@@ -62,8 +62,23 @@ const void Ceaser_Cipher::UtilizeText(string &text)
 	}
 	text = temp;
 }
+const string Ceaser_Cipher::Decipher(string &text, int &key)
+{
+	string plane_text ;
+	int tmp;
+	for(int i = 0 ;i < text.length() ; i++)
+	{
+		tmp =(text[i] - 'a') - key;
+		while( tmp<0 )
+			tmp +=26;
+		tmp %= 26;
+		plane_text+= tmp +'a';
+	}
+	return plane_text;
+}
 
 const string Ceaser_Cipher::Cipher(string&,string&){return "";}
 const string Ceaser_Cipher::Cipher(string&,int&,int**){return "";}
 int** Ceaser_Cipher::UtilizeText(string&,int&){return NULL;}
 const string Ceaser_Cipher::Decipher(string&, string&){return "";}
+const string Ceaser_Cipher::Decipher(string&, int&, int **){return "";}

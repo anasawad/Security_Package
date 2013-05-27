@@ -51,7 +51,9 @@ public:
 	virtual const string Cipher(string&, string&);
 	virtual const string Cipher(string&, int&, int **);
 	virtual const string Decipher(string&, string&);
+	virtual const string Decipher(string&, int&);
 	virtual const string Decipher_Based_on_Previous_Ciphering(string&);
+	virtual const string Decipher(string&, int&, int **);
 	
 };
 

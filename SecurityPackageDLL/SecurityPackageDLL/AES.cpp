@@ -247,3 +247,5 @@ const string AES::Decipher_Based_on_Previous_Ciphering(string &text)
 	
 	return plainText;
 }
+const string AES::Decipher(string&, int&, int **){return"";}
+const string AES::Decipher(string&, int&){return"";}

@@ -22,6 +22,8 @@ public:
 	string PRGA(int inputSize);/*pseudo-random number generation*/
 	virtual const void UtilizeText(string&);
 	virtual int** UtilizeText(string&,int&);
+	virtual const string Decipher(string&, int&, int **);
+	virtual const string Decipher(string&, int&);
 
 };
 

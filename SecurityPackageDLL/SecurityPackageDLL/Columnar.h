@@ -9,11 +9,12 @@ class Columnar: public Security_Package, public IUtilities
 public:
 	Columnar();
 	~Columnar();
-	//Override virtual functions
 	virtual const string Cipher(string&, string&);
 	virtual const string Cipher(string&, int&);
 	virtual const string Cipher(string&, int&, int **);
 	virtual const string Decipher(string&, string&);
+	virtual const string Decipher(string&, int&);
+	virtual const string Decipher(string&, int&, int **);
 
 private:
 	//members

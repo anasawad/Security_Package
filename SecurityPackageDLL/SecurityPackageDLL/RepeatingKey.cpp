@@ -28,7 +28,21 @@ const string RepeatingKey::Cipher(string &text, string &key)
 }
 const string RepeatingKey::Cipher(string&, int&){return "";}
 const string RepeatingKey::Cipher(string&, int&, int **){return "";}
-const string RepeatingKey::Decipher(string&, string&){return "";}
+const string RepeatingKey::Decipher(string &text, string &key)
+{
+	int idx1,idx2;
+	InitTable();
+	string plane;
+	string utilizedKey = UtilizeKey(text, key);
+	for (int i = 0; i < text.length(); i++)
+	{
+		idx1 = MapChar(text[i]);
+		idx2 = MapChar(utilizedKey[i]);
+		plane += m_table[0][idx2-idx1];
+	}
+	return plane;
+}
+const string RepeatingKey::Decipher(string&, int&){return "";}
 //Private methods
 const void RepeatingKey::UtilizeText(string& text)
 {
@@ -57,3 +71,5 @@ int RepeatingKey::MapChar(char c)
 {
 	return c-97;
 }
+
+const string RepeatingKey::Decipher(string&, int&, int **){return "";}

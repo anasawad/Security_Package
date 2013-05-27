@@ -143,8 +143,77 @@ const string Playfair_Cipher::Get_Corresponding(string &text)
 	return out;
 }
 
-const string Playfair_Cipher::Decipher(string&, string&){return "";}
+const string Playfair_Cipher::Get_Corresponding_For_Decipher(string &text)
+{
+	pair<int, int> _1st, _2nd;
+
+	string out = "  ";
+	for(int i=0; i<5; i++)
+	{
+		for(int j=0; j<5; j++)
+		{
+			if(text[0] == m_keyTable[i][j])
+			{
+				_1st.first = i;
+				_1st.second = j;
+			}
+			else if(text[1] == m_keyTable[i][j])
+			{
+				_2nd.first = i;
+				_2nd.second = j;
+			}
+		}
+	}
+
+	if(_1st.second == _2nd.second) // same column
+	{
+		out[0] = m_keyTable[((_1st.first-1)+5)%5 ][_1st.second];
+		out[1] = m_keyTable[((_2nd.first-1)+5)%5 ][_2nd.second] ;
+	}
+	else if(_1st.first == _2nd.first) // same row
+	{
+		out[0] = m_keyTable[_1st.first][ ((_1st.second-1)+5) % 5 ];
+		out[1] = m_keyTable[_2nd.first][ ((_2nd.second-1)+5)%5 ] ;
+	}
+	else //normal
+	{
+		out[0] = m_keyTable[_1st.first][_2nd.second];
+		out[1] = m_keyTable[_2nd.first][_1st.second];
+	}
+
+	return out;
+}
+
+const string Playfair_Cipher::Decipher(string &text, string &key){
+	string temp = "  ";
+	string out  = "";
+	bool isEqual  = 0 ;
+	out.resize(text.size()*2);
+
+	Set_KeyTable(key);
+
+	for (int i=0; i < text.size(); i+=2)
+	{
+		temp[0] = text[i];
+		temp[1] = text[i+1];
+
+		temp = Get_Corresponding_For_Decipher(temp);
+
+		out[i+isEqual] = temp[0];
+		out[i+1+isEqual] = temp[1];
+	}
+	for(int i = 0 ; i < out.size() ; i++)
+	{
+		if( out[i] == 'x' &&( out[i-1] == out[i+1]  ||i== out.size()-1 ) )
+		{
+			out.erase(i,1);
+		}
+	}
+	return out;
+}
+const string Playfair_Cipher::Decipher(string&, int&){return "";}
 
 const string Playfair_Cipher::Cipher(string&, int&){return"";}
 const string Playfair_Cipher::Cipher(string&,int&, int**){return "";}
 int** Playfair_Cipher::UtilizeText(string&,int&){return NULL;}
+const string Playfair_Cipher::Decipher(string&, int&, int **){return "";}

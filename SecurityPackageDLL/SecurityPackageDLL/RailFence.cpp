@@ -2,11 +2,9 @@
 
 RailFence::RailFence()
 {
-
 }
 RailFence::~RailFence()
 {
-
 }
 
 
@@ -53,6 +51,46 @@ const string RailFence::Cipher(string &text, int &key)
 const string RailFence::Cipher(string &text, string &key){return "";}
 const string RailFence::Cipher(string &, int&, int **){return "";}
 const string RailFence::Decipher(string&, string&){return "";}
+const string RailFence::Decipher(string &text, int &key)
+{
+	UtilizeText(text);
+	string cipherText;
+	int len = text.length() / key;
+	if(text.length() % key !=0 )
+		len++;
+	int count =0;
+	m_textMat.resize(key);
+	for(int i = 0 ; i < key ; i++)
+	{
+		m_textMat[i].resize(len);
+	}
+
+	for (int i =0 ; i < key; i++)
+	{
+		for (int j =0; j < len; j++)
+		{
+			if ( count < text.length() )
+			{
+				m_textMat[i][j]= text[count];
+				count++;
+			}
+		}
+	}
+
+	for (int j = 0 ; j < len ; j++)
+	{
+		for (int i = 0 ; i < key ; i++)
+		{
+			if (isalpha(m_textMat[i][j]))
+			{
+				cipherText += m_textMat[i][j];
+			}
+
+		}
+	}
+
+	return cipherText;
+}
 //private Functions
 const void RailFence::UtilizeText(string &text)
 {
@@ -67,5 +105,8 @@ const void RailFence::UtilizeText(string &text)
 }
 int** RailFence::UtilizeText(string &text,int &key)
 {
+
 	return NULL;
 }
+
+const string RailFence::Decipher(string&, int&, int **){return "";}

@@ -84,6 +84,7 @@
     <ClInclude Include="DES.h" />
     <ClInclude Include="Hill_Cipher.h" />
     <ClInclude Include="IUtilities.h" />
+    <ClInclude Include="MD5.h" />
     <ClInclude Include="Monoalphabetic_Cipher.h" />
     <ClInclude Include="Playfair_Cipher.h" />
     <ClInclude Include="Polyalphabetic.h" />
@@ -93,6 +94,7 @@
     <ClInclude Include="SecurityAlgorithmsFactory.h" />
     <ClInclude Include="SecurityPackageWrapper.h" />
     <ClInclude Include="Security_Package.h" />
+    <ClInclude Include="TDES.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="AES.cpp" />
@@ -101,6 +103,7 @@
     <ClCompile Include="Columnar.cpp" />
     <ClCompile Include="DES.cpp" />
     <ClCompile Include="Hill_Cipher.cpp" />
+    <ClCompile Include="MD5.cpp" />
     <ClCompile Include="Monoalphabetic_Cipher.cpp" />
     <ClCompile Include="Playfair_Cipher.cpp" />
     <ClCompile Include="Polyalphabetic.cpp" />
@@ -109,6 +112,7 @@
     <ClCompile Include="RepeatingKey.cpp" />
     <ClCompile Include="SecurityAlgorithmsFactory.cpp" />
     <ClCompile Include="SecurityPackageWrapper.cpp" />
+    <ClCompile Include="TDES.cpp" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="Microsoft.VisualStudio.VSContentInstaller" />

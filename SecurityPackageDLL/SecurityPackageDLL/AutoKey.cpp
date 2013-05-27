@@ -2,7 +2,6 @@
 using namespace std;
 
 AutoKey::AutoKey()
-
 {
 	Polyalphabetic::InitTable();
 	Polyalphabetic::InitAlpha();
@@ -13,8 +12,6 @@ AutoKey::~AutoKey()
 {
 
 }
-
-
 //Override Methods
 const string AutoKey::Cipher(string &text, string &key)
 {
@@ -33,7 +30,22 @@ const string AutoKey::Cipher(string &text, string &key)
 }
 const string AutoKey::Cipher(string&, int&){return "";}
 const string AutoKey::Cipher(string&, int&, int **){return "";}
-const string AutoKey::Decipher(string&, string&){return "";}
+const string AutoKey::Decipher(string &text, string &key)
+{
+	int idx1,idx2;
+	//InitTable();
+	string plane;
+	string utilizedKey = UtilizeKey(text, key);
+	for (int i = 0; i < text.length(); i++)
+	{
+		idx1 = MapChar(text[i]);
+		idx2 = MapChar(utilizedKey[i]);
+		plane += m_table[0][idx2-idx1];
+	}
+	return plane;
+}
+const string AutoKey::Decipher(string&, int&){return "";}
+const string AutoKey::Decipher(string&, int&, int **){return "";}
 
 //Private methods
 const void AutoKey::UtilizeText(string& text)

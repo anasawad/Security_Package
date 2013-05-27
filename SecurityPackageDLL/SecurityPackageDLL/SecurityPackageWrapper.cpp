@@ -11,24 +11,33 @@ String^ SecurityPackageWrapper::Cipher(String^ algoName, String^text, String^ ke
 	m_algorithm = SecurityAlgorithmsFactory::getInstance()->CreateAlgorithm(ToString(algoName));
 	return ToStringHandle(m_algorithm->Cipher(ToString(text),ToString(key)));
 }
-
 String^ SecurityPackageWrapper::Cipher(String^ algoName, String^ text, int key)
 {
 	m_algorithm = SecurityAlgorithmsFactory::getInstance()->CreateAlgorithm(ToString(algoName));
 	return ToStringHandle(m_algorithm->Cipher(ToString(text),key));
 }
 
+
 String^ SecurityPackageWrapper::Decipher(String^ algoName,String^ text, String^ key)
 {
 	m_algorithm = SecurityAlgorithmsFactory::getInstance()->CreateAlgorithm(ToString(algoName));
 	return ToStringHandle(m_algorithm->Decipher(ToString(text),ToString(key)));
+}
+String^ SecurityPackageWrapper::Decipher(String^ algoName,String^ text, int key)
+{
+	m_algorithm = SecurityAlgorithmsFactory::getInstance()->CreateAlgorithm(ToString(algoName));
+	return ToStringHandle(m_algorithm->Decipher(ToString(text),key));
 }
 String^ SecurityPackageWrapper::Decipher(String^ algoName,String^text)
 {
 	m_algorithm = SecurityAlgorithmsFactory::getInstance()->CreateAlgorithm(ToString(algoName));
 	return ToStringHandle(m_algorithm->Decipher_Based_on_Previous_Ciphering(ToString(text)));
 }
-
+String^ SecurityPackageWrapper::Decipher(String^algoName,String^text,int matSize,array<int,2>^ matrix)
+{
+	m_algorithm = SecurityAlgorithmsFactory::getInstance()->CreateAlgorithm(ToString(algoName));
+	return ToStringHandle(m_algorithm->Decipher(ToString(text),matSize,ToArray(matrix,matSize)));
+}
 string SecurityPackageWrapper::ToString(String ^in)
 {
 	string temp ;

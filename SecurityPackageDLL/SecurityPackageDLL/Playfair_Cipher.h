@@ -11,9 +11,9 @@ class Playfair_Cipher: public Security_Package, public IUtilities
 private:
 	char m_keyTable[5][5];
 	const string Get_Corresponding(string &);// 2 chars per turn;
+	const string Get_Corresponding_For_Decipher(string &);// 2 chars per turn;
 	virtual const void UtilizeText(string &); //utilize the input text 
 	virtual int** UtilizeText(string&,int&);
-	virtual const string Decipher(string&, string&);
 
 public:	
 	Playfair_Cipher();
@@ -23,6 +23,9 @@ public:
 	virtual const string Cipher(string&, string&);
 	virtual const string Cipher(string&, int&);
 	virtual const string Cipher(string&, int&, int **);
+	virtual const string Decipher(string&, string&);
+	virtual const string Decipher(string&, int&);
+	virtual const string Decipher(string&, int&, int **);
 
 };
 #endif //PLAYFAIR_CIPHER_H

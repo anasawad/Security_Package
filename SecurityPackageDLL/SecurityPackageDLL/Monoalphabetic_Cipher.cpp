@@ -49,8 +49,21 @@ const string Monoalphabetic_Cipher::Cipher(string &text, string &key)
 
 const string Monoalphabetic_Cipher::Cipher(string&,int&){return "";}
 const string Monoalphabetic_Cipher::Cipher(string&,int&,int**){return "";}
-const string Monoalphabetic_Cipher::Decipher(string&, string&){return "";}
-
+const string Monoalphabetic_Cipher::Decipher(string& text, string& key){
+	string PlaneText ;
+	for(int i = 0 ;i < text.length() ; i++)
+	{
+		for( hash_map<char , char > ::iterator it = m_alpha.begin() ; it != m_alpha.end() ; it++)
+		{
+			if(text[i] == (*it).second ){
+				PlaneText+=(*it).first;
+			}
+		}
+	}
+	return PlaneText;
+}
+const string Monoalphabetic_Cipher::Decipher(string&, int&){return "";}
+const string Monoalphabetic_Cipher::Decipher(string&, int&, int **){return "";}
 
 const void Monoalphabetic_Cipher::UtilizeText(string& txt)
 {

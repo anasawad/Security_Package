@@ -18,6 +18,8 @@ public:
 	virtual const string Cipher(string&, string&);
 	virtual const string Cipher(string&, int&, int **);
 	virtual const string Decipher(string&, string&);
+	virtual const string Decipher(string&, int&);
+	virtual const string Decipher(string&, int&, int **);
 
 private:
 	//members
